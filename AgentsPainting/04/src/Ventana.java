@@ -17,11 +17,13 @@ public class Ventana extends JFrame {
         this.setSize(WIDTH, HEIGHT);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
+        JTextField textField = new JTextField("0");
         MyCanvas myCanvas = new MyCanvas();
-        this.add(myCanvas);
+        myCanvas.setTextField(textField);
+        
         
 
-        JTextField textField = new JTextField("0");
+        this.add(myCanvas);
         this.add(textField, BorderLayout.NORTH);
 
         this.setVisible(true);

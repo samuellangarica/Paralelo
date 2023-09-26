@@ -10,6 +10,8 @@ public class Agent implements Runnable{
 
     public int x,y;
     JLabel label;
+
+    boolean active = true;
     
 
     public Agent(int x, int y, Graphics g){
@@ -30,7 +32,7 @@ public class Agent implements Runnable{
     @Override
     public void run(){
         
-        while(true){
+        while(this.active){
 
             executeMovement();
 
@@ -56,6 +58,9 @@ public class Agent implements Runnable{
 
         drawCircle(Color.BLACK);
 
+    }
+    public void kill(){
+        this.active = false;
     }
 
 }
